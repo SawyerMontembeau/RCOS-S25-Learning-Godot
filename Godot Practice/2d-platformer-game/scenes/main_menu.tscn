@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbv8rfkbl2mpi"]
+
+[ext_resource type="Texture2D" uid="uid://clgtkrfgcfu3w" path="res://Pink.png" id="1_2lnhc"]
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_5gjfb"]
+[ext_resource type="Texture2D" uid="uid://ysba47fiaabn" path="res://Cool Text - Jump Game 474913880295506.png" id="2_ikdgw"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_5gjfb")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2lnhc")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -479.0
+offset_top = -169.0
+offset_right = 479.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ikdgw")
+
+[node name="level1" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = 63.0
+offset_right = -116.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+
+[node name="level2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 180.0
+offset_top = 64.0
+offset_right = 381.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
