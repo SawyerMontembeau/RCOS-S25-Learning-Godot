@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b4bkqx30x8rip"]
+[gd_scene load_steps=31 format=3 uid="uid://b4bkqx30x8rip"]
 
 [ext_resource type="Script" path="res://scenes/main_character.gd" id="1_mdvo4"]
 [ext_resource type="Texture2D" uid="uid://i3dk76sx7ba" path="res://Jump (32x32).png" id="1_qv4el"]
@@ -190,6 +190,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vrcfj"]
 size = Vector2(23, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjb6r"]
+size = Vector2(23.3333, 28)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_mdvo4")
@@ -203,3 +206,9 @@ frame_progress = 0.141492
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_vrcfj")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.666667, 2)
+shape = SubResource("RectangleShape2D_vjb6r")
