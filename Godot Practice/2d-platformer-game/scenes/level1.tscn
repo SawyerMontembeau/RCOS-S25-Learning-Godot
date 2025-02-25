@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dp6p20i5p22aw"]
+[gd_scene load_steps=11 format=3 uid="uid://dp6p20i5p22aw"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_7i46i"]
 [ext_resource type="Texture2D" uid="uid://bjro4ml02g8v5" path="res://Green.png" id="2_a6ak6"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://l8uiwnfcawla" path="res://scenes/finish.tscn" id="6_uheyu"]
 [ext_resource type="PackedScene" uid="uid://k0detl8sj7ir" path="res://scenes/level2.tscn" id="7_6pdqb"]
 [ext_resource type="PackedScene" uid="uid://cf7hrg36obgga" path="res://scenes/enemy.tscn" id="8_lwfds"]
-[ext_resource type="PackedScene" uid="uid://dbv8rfkbl2mpi" path="res://scenes/main_menu.tscn" id="9_dpvew"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0x0t"]
 texture = ExtResource("3_81wrp")
@@ -288,8 +287,6 @@ vertical_alignment = 1
 
 [node name="Enemy" parent="." instance=ExtResource("8_lwfds")]
 position = Vector2(622, 579)
-target_level = ExtResource("9_dpvew")
 
 [node name="Enemy2" parent="." instance=ExtResource("8_lwfds")]
 position = Vector2(2032, 154)
-target_level = ExtResource("9_dpvew")

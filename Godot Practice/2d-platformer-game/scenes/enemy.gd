@@ -1,10 +1,9 @@
 extends CharacterBody2D
 
-@export var target_level : PackedScene
-
-
-var speed = 60.0
+var normal_speed = 60.0
+var speed = normal_speed
 var facing_right = true
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,10 +25,16 @@ func flip():
 	
 	scale.x = abs(scale.x) * -1
 	if facing_right:
-		speed = abs(speed)
+		speed = abs(normal_speed)
+		#normal_speed = 60.0
 	else:
-		speed = abs(speed) * -1
-
-func _on_hitbox_area_entered(area):
+		speed = abs(normal_speed) * -1
+		#normal_speed = -60.0
+		
+func _on_vision_area_entered(area):
 	if(area.get_parent() is CharacterBody2D):
-		get_tree().change_scene_to_packed(target_level)
+		speed = normal_speed * 3 if facing_right else normal_speed * -3
+	
+func _on_vision_area_exited(area: Area2D) -> void:
+	if(area.get_parent() is CharacterBody2D):
+		speed = normal_speed if facing_right else normal_speed * -1
