@@ -10,10 +10,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if !$fallingCheck.is_colliding() && is_on_floor():
+	if !$fallingCheck.is_colliding() && is_on_floor() && $WallCheck.get_collider() is not CharacterBody2D:
 		flip()
 		
-	if $WallCheck.is_colliding() && is_on_floor():
+	if $WallCheck.is_colliding() && is_on_floor() && $WallCheck.get_collider() is not CharacterBody2D:
 		flip()
 
 	velocity.x = speed

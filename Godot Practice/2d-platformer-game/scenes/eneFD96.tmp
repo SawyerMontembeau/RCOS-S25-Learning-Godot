@@ -17,7 +17,7 @@ texture = ExtResource("1_u2noj")
 shape = SubResource("RectangleShape2D_o3hvy")
 
 [node name="Vision" type="RayCast2D" parent="."]
-target_position = Vector2(400, -1)
+target_position = Vector2(650, -1)
 
 [node name="WallCheck" type="RayCast2D" parent="."]
 target_position = Vector2(37, 0)

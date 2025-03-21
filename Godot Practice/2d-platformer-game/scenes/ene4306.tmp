@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjf2e8hxbeeqd"]
+[gd_scene load_steps=3 format=3 uid="uid://bjf2e8hxbeeqd"]
 
-[ext_resource type="Script" path="res://scenes/enemy_type_2.gd" id="1_1b5ee"]
 [ext_resource type="Texture2D" uid="uid://bjro4ml02g8v5" path="res://Green.png" id="1_u2noj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3hvy"]
 size = Vector2(64, 64)
 
 [node name="enemyType2" type="CharacterBody2D"]
-script = ExtResource("1_1b5ee")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -17,7 +15,7 @@ texture = ExtResource("1_u2noj")
 shape = SubResource("RectangleShape2D_o3hvy")
 
 [node name="Vision" type="RayCast2D" parent="."]
-target_position = Vector2(400, -1)
+target_position = Vector2(650, -1)
 
 [node name="WallCheck" type="RayCast2D" parent="."]
 target_position = Vector2(37, 0)
