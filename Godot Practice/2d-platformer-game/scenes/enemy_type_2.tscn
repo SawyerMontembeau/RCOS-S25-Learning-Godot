@@ -48,3 +48,5 @@ target_position = Vector2(400, -1)
 
 [node name="WallCheck" type="RayCast2D" parent="."]
 target_position = Vector2(37, 0)
+
+[node name="FloorCheck" type="RayCast2D" parent="."]
