@@ -3,6 +3,7 @@ extends StaticBody2D
 var timeClosing = 1
 var is_catching = false
 
+
 func _physics_process(delta: float) -> void:
 	if $PlayerDetect.is_colliding() and not is_catching:
 		is_catching = true
