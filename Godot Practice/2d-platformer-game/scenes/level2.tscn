@@ -355,4 +355,4 @@ facing_right = true
 
 [node name="Venus" parent="." instance=ExtResource("10_gkpjc")]
 z_as_relative = false
-position = Vector2(1295, 378)
+position = Vector2(1297, 388)

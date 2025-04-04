@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cav6et8adjybx"]
+[gd_scene load_steps=35 format=3 uid="uid://cav6et8adjybx"]
 
 [ext_resource type="Script" path="res://scenes/venus.gd" id="1_rd8vo"]
 [ext_resource type="Texture2D" uid="uid://bjro4ml02g8v5" path="res://Green.png" id="1_spg4n"]
@@ -6,11 +6,27 @@
 [ext_resource type="Texture2D" uid="uid://ewhfut8hldm3" path="res://Yellow.png" id="3_71afm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpkdn"]
-size = Vector2(64, 192)
+size = Vector2(64, 184)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2f8fh"]
 atlas = ExtResource("3_71afm")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1etmv"]
+atlas = ExtResource("3_71afm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ide65"]
+atlas = ExtResource("3_71afm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt26v"]
+atlas = ExtResource("3_71afm")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgqej"]
+atlas = ExtResource("3_71afm")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6w3b"]
 atlas = ExtResource("2_tsltc")
@@ -88,13 +104,41 @@ region = Rect2(0, 0, 64, 64)
 atlas = ExtResource("2_tsltc")
 region = Rect2(0, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b8fs"]
+atlas = ExtResource("2_tsltc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmqq3"]
+atlas = ExtResource("2_tsltc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw374"]
+atlas = ExtResource("2_tsltc")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whfub"]
+atlas = ExtResource("2_tsltc")
+region = Rect2(0, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g63oi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2f8fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1etmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ide65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt26v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgqej")
 }],
-"loop": true,
+"loop": false,
 "name": &"Closed",
 "speed": 5.0
 }, {
@@ -150,7 +194,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nva8a")
 }],
-"loop": true,
+"loop": false,
 "name": &"Closing",
 "speed": 5.0
 }, {
@@ -165,17 +209,29 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b52y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b8fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmqq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw374")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whfub")
 }],
-"loop": true,
+"loop": false,
 "name": &"Opening",
 "speed": 5.0
 }]
 
-[node name="Venus" type="CharacterBody2D"]
+[node name="Venus" type="StaticBody2D"]
 script = ExtResource("1_rd8vo")
 
 [node name="ClosedHitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -88)
+position = Vector2(0, -92)
 shape = SubResource("RectangleShape2D_xpkdn")
 disabled = true
 
@@ -184,7 +240,7 @@ target_position = Vector2(0, -184)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -88)
+position = Vector2(0, -96)
 scale = Vector2(6, 3)
 sprite_frames = SubResource("SpriteFrames_g63oi")
 animation = &"Closing"
