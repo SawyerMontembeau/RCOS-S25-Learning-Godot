@@ -241,7 +241,6 @@ disabled = true
 target_position = Vector2(0, -184)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(0, -96)
 scale = Vector2(6, 3)
